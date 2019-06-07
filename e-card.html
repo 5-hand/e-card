@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+    
+<head>
+  <meta charset = "utf-8">
+    <title>Eカード</title>
+<script type="text/javascript" src="quickflip/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="quickflip/quickflip.js"></script>
+<link type="text/css" rel="stylesheet" href="quickflip/quickflip.css" />
+<link rel="stylesheet" type="text/css" href="e-card.css">
+
+</head>
+<body>
+<div id="left">
+    
+<div id="left_left">
+<div id="player1"></div>
+<div id="property">Eカード</div>
+<div id="player2"></div>
+</div>
+
+<div id="field">
+<div id="message_computer"></div>
+<div id="field_center">
+<div id="computer_card">
+<ul id="computer_card_set">
+    <li id="card6"></li>
+    <li id="card7"></li>
+    <li id="card8"></li>
+    <li id="card9"></li>
+    <li id="card10"></li>
+</ul>
+</div>
+    
+<div id="buttlefield">
+<div id="buttle1"><p id="buttle_card2"></p></div>
+<div id="buttle2"><p id="buttle_card1" onclick = "fight()"></p></div>
+</div>
+    
+<div id="player_card">
+<ul id="player_card_set">
+    <li id="card1" onclick = "decision1()"></li>
+    <li id="card2" onclick = "decision2()"></li>
+    <li id="card3" onclick = "decision3()"></li>
+    <li id="card4" onclick = "decision4()"></li>
+    <li id="card5" onclick = "decision5()"></li>
+</ul>
+</div>
+</div>    
+<div id="message_player"></div>
+</div>
+</div>
+    
+<div id="right">
+<div id="table1">
+<table id="table_hyouzi">
+<tr>
+ <td></td>
+ <td>陣営</td>
+ <td>勝敗</td>
+</tr>
+    
+<tr id="1">
+ <td>第1戦</td>
+ <td>皇帝</td>
+ <td id="box1"></td>
+</tr>
+     
+<tr id="2">
+ <td>第2戦</td>
+ <td>皇帝</td>
+ <td id="box2"></td>
+</tr>
+
+<tr id="3">
+ <td>第3戦</td>
+ <td>皇帝</td>
+ <td id="box3"></td>
+</tr>
+    
+<tr id="4">
+ <td>第4戦</td>
+ <td>奴隷</td>
+ <td id="box4"></td>
+</tr>
+    
+<tr id="5">
+ <td>第5戦</td>
+ <td>奴隷</td>
+ <td id="box5"></td>
+</tr>
+    
+<tr id="6">
+ <td>第6戦</td>
+ <td>奴隷</td>
+ <td id="box6"></td>
+</tr>
+    
+<tr id="7">
+ <td>第7戦</td>
+ <td>皇帝</td>
+ <td id="box7"></td>
+</tr>
+    
+<tr id="8">
+ <td>第8戦</td>
+ <td>皇帝</td>
+ <td id="box8"></td>
+</tr>
+    
+<tr id="9">
+ <td>第9戦</td>
+ <td>皇帝</td>
+ <td id="box9"></td>
+</tr>
+    
+<tr id="10">
+ <td>第10戦</td>
+ <td>奴隷</td>
+ <td id="box10"></td>
+</tr>
+    
+<tr id="11">
+ <td>第11戦</td>
+ <td>奴隷</td>
+ <td id="box11"></td>
+</tr>
+    
+<tr id="12">
+ <td>第12戦</td>
+ <td>奴隷</td>
+ <td id="box12"></td>
+</tr>
+    
+</table>
+</div>
+    
+<div id="controlPanel">
+<div id="life">
+<div id="left_life">
+<div id="left_bitLife">
+<form>
+今試合賭け幅<br><a id="selector">
+<select id="lifeSelect">
+    <option value="1">1mm</option>
+    <option value="2">2mm</option>
+    <option value="3">3mm</option>
+    <option value="4">4mm</option>
+    <option value="5">5mm</option>
+    <option value="6">6mm</option>
+    <option value="7">7mm</option>
+    <option value="8">8mm</option>
+    <option value="9">9mm</option>
+    <option value="10">10mm</option>
+    <option value="11">11mm</option>
+    <option value="12">12mm</option>
+    <option value="13">13mm</option>
+    <option value="14">14mm</option>
+    <option value="15">15mm</option>
+    <option value="16">16mm</option>
+    <option value="17">17mm</option>
+    <option value="18">18mm</option>
+    <option value="19">19mm</option>
+    <option value="20">20mm</option>
+    <option value="21">21mm</option>
+    <option value="22">22mm</option>
+    <option value="23">23mm</option>
+    <option value="24">24mm</option>
+    <option value="25">25mm</option>
+    <option value="26">26mm</option>
+    <option value="27">27mm</option>
+    <option value="28">28mm</option>
+    <option value="29">29mm</option>
+    <option value="30">30mm</option>
+</select>
+</a>
+
+</form>
+</div>
+
+<div id="left_currentlife">
+残り:<a id="Life">30</a>mm
+</div>
+</div>
+
+<div id="right_money">
+<div id="currentMoney">
+賞金:<a id="money1">0</a>万円
+</div>
+    
+<div id="gottenMoney">
+累計:<a id="money2">0</a>万円
+</div>
+</div>
+</div>
+    
+    
+<div id="srButton">
+    
+<div id="start">
+<input id="startbutton" type="button" value="スタート" onclick="start()">
+</div>
+
+<div id="reset">
+<input id="resetbutton" type="button" value="リセット" onclick="reset()">
+</div>
+    
+</div>
+</div>   
+</div>
+<script src="e-card.js"></script>
+</body>
+</html>
